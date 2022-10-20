@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 n = int(input()) #이진 노드 트리의 개수
 tree = {}
-# 전위 순회 : 현재 -> 왼쪽 -> 오른쪽 노드 ABCDEFG
+# 전위 순회 : 현재 -> 왼쪽 -> 오른쪽 노드 ABDCEFG
 # 중위 순회 : 왼쪽 -> 현재 -> 오른쪽 노드 DBAECFG
 # 후위 순회 : 왼쪽 -> 오른쪽 -> 현재 노드 DBECFGA
 
