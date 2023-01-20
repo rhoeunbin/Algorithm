@@ -1,28 +1,23 @@
-n, k = map(int, input().split())
-
+n,k = map(int,input().split())
 num = []
-ans = set()
+cnt = 0
 
-def dfs(num, answer):
-    if num == n:
-        ans.add(tuple(answer))
+def dfs(total):
+    if total > n:
+        return
+    if total == n:
+        global cnt
+        cnt += 1
+        if cnt == k:
+            print('+'.join(map(str, num)))
         return
 
-    if num + 1 <= n:
-        dfs(num + 1, answer + [1])
+    for i in range(1, 4):
+        num.append(i)
+        dfs(total + i)
+        num.pop()
 
-    if num + 2 <= n:
-        dfs(num + 2, answer + [2])
+dfs(0)
 
-    if num + 3 <= n:
-        dfs(num + 3, answer + [3])
-
-dfs(0, [])
-
-if len(ans) < k: 
+if cnt < k:
     print(-1)
-else:
-    ans = list(ans)
-    ans.sort()
-    answer = ans[k-1]
-    print(*answer, sep="+")
