@@ -1,32 +1,35 @@
 from collections import deque
 
 T = int(input())
-for tc in range(T):
+for _ in range(T):
     func = input()
     k = int(input())
     # q: 입력받은 배열 양방향 큐에 담기
-    q = deque(input()[1:-1].split(','))
+    queue = deque(input()[1:-1].split(','))
     # flag: R(뒤집기)를 한 번만 실행하기 위함
-    flag = 0
+    cnt = 0
     
-    # TIP! deque는 [''] 의 길이를 0이 아닌 1로 취급하기 때문에 초기화 필요!
     if k == 0:  
-        q = []
+        queue = []
     
     for c in func:
         if c == 'R':
-            flag += 1
+            cnt += 1
         elif c == 'D':
-            if len(q) == 0:
+            if len(queue) == 0:
                 print('error')
                 break
             else:
-                if flag % 2 == 1:
-                    q.pop()
+                if cnt % 2 == 1:
+                    queue.pop()
                 else:
-                    q.popleft()
+                    queue.popleft()
                         
     else:
-        if flag % 2 == 1:
-            q.reverse()
-        print('[' + ','.join(q) + ']')
+        if cnt % 2 == 0:
+            # print(queue)
+            print('[' + ','.join(queue) + ']')
+        else:
+            queue.reverse()
+            # print('1',queue)
+            print('[' + ','.join(queue) + ']')
