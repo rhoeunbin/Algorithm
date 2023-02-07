@@ -1,22 +1,19 @@
-import sys
-input = sys.stdin.readline
-
 n = int(input())
-num = list(map(int,input().split()))
-num.sort()
+a = list(map(int, input().split()))
+a.sort()
 m = int(input())
-target_list = list(map(int,input().split()))
+target_list = list(map(int, input().split()))
 
 for i in range(m):
-    find = False # 찾아야 하는 수
+    find = False
     target = target_list[i]
-    # 이진 탐색 시작
-    start = 0 # 시작 인덱스
-    end = len(num)-1 # 종료 인덱스
+
+    start = 0
+    end = len(a) - 1
 
     while start <= end:
-        midi = int((start+end) / 2) # 중간 인덱스
-        midv = num[midi]# 중앙값
+        midi = int((start + end) / 2)
+        midv = a[midi]
 
         if midv > target:
             end = midi - 1
@@ -30,3 +27,4 @@ for i in range(m):
         print(1)
     else:
         print(0)
+      
