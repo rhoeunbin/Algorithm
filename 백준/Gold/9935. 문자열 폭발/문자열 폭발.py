@@ -1,4 +1,4 @@
-word = input()
+word = input().strip()
 bomb = list(input())
 
 stack = []
