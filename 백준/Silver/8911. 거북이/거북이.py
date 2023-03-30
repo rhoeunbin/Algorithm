@@ -32,4 +32,4 @@ for _ in range(t):
         x_max = max(x_max, x)
         y_max = max(y_max, y)
     # print(x_max, x_min, y_max , y_min)
-    print(abs(x_max - x_min) * abs(y_max - y_min))
+    print((x_max - x_min) * (y_max - y_min))
