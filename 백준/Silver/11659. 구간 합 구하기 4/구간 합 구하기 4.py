@@ -1,20 +1,16 @@
 import sys
 input = sys.stdin.readline
 
-# 수의 개수 N과 합을 구해야 하는 횟수 M
-N, M = map(int, input().split())
-n_num = list(map(int, input().split()))
-prefix = [0]
-ans = 0
+n, m = map(int, input().split())
+num = list(map(int, input().split()))
+hop = [0]
 
-for x in n_num:
-    ans = ans + x
-    # print(ans)
-    prefix.append(ans)
-# print(prefix)
+cnt = 0
 
-for n in range(M):
-    i, j = map(int,input().split())
-    print(prefix[j] - prefix[i-1])
+for i in num:
+    cnt += i
+    hop.append(cnt)
 
-# print(n_num)
+for i in range(m):
+    s, e = map(int, input().split())
+    print(hop[e] - hop[s - 1])
