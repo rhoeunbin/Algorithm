@@ -1,30 +1,12 @@
 n = int(input())
-a = list(map(int, input().split()))
-a.sort()
+arr = list(map(int, input().split()))
 m = int(input())
-target_list = list(map(int, input().split()))
+arr2 = list(map(int, input().split()))
 
-for i in range(m):
-    find = False
-    target = target_list[i]
+arr.sort()
 
-    start = 0
-    end = len(a) - 1
-
-    while start <= end:
-        midi = int((start + end) / 2)
-        midv = a[midi]
-
-        if midv > target:
-            end = midi - 1
-        elif midv < target:
-            start = midi + 1
-        else:
-            find = True
-            break
-    
-    if find:
+for i in arr2:
+    if i in arr:
         print(1)
     else:
         print(0)
-      
