@@ -1,22 +1,25 @@
-word = list(input())
-n = len(word)
-stack = []
-m = int(input())
+import sys
+input = sys.stdin.readline
 
-for i in range(m):
-    command = input().split()
-# print(command)
-    if command[0] == 'L' and word:
-        stack.append(word.pop())
-        
-    elif command[0] == 'D' and stack:
-        word.append(stack.pop())
-        
-    elif command[0] == 'B' and word:
-        word.pop()
-        
-    elif command[0] == 'P':
-        word.append(command[1])
+word = list(input().rstrip())
+ans = []
 
-ans = word + stack[::-1]
-print(''.join(ans))       
+for _ in range(int(input())):
+    cmd = list(input().split())
+    if cmd[0] == 'L':
+        if word:
+              ans.append(word.pop())
+              
+    elif cmd[0] == 'D':
+        if ans:
+            word.append(ans.pop())
+
+    elif cmd[0] == 'B':
+        if word:
+            word.pop()
+              
+    else:
+        word.append(cmd[1])
+        
+word.extend(reversed(ans))
+print(''.join(word))
