@@ -1,12 +1,11 @@
 n = int(input())
-member_lst = []
+arr = []
 
-for i in range(n):
-    age, name = map(str, input().split())
-    age = int(age)
-    member_lst.append((age, name))
+for _ in range(n):
+    age, name = input().split()
+    arr.append([int(age),name])
 
-member_lst.sort(key = lambda x : x[0])	## (age, name)에서 age만 비교
+arr.sort(key=lambda x:int(x[0]))
 
-for i in member_lst:
-    print(i[0], i[1])  
+for i in arr:
+    print(i[0], i[1])
