@@ -1,16 +1,18 @@
 import sys
 input = sys.stdin.readline
 
-N  = int(input())
-arr = [0]*10001
+n = int(input())
 
-for _ in range(N):
+# 각 수의 등장 횟수를 저장하기 위한 리스트 생성
+arr = [0] * 10001
+
+# n개의 수를 입력 받아 등장 횟수를 증가시킴
+for _ in range(n):
     num = int(input())
-    arr[num] += 1 # arr[num]에 num이 들어온 개수 count 
+    arr[num] += 1
 
-for i in range(10001): 
-	# arr[i]에 숫자가 들어왔다면 
-    if arr[i] != 0:
-    	# arr[num]에 num이 들어온 개수 만큼 출력 
-        for j in range(arr[i]): 
+# 리스트를 순회하면서 등장 횟수가 0이 아닌 수를 출력
+for i in range(10001):
+    if arr[i]:
+        for j in range(arr[i]):
             print(i)
