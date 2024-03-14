@@ -1,10 +1,13 @@
 n = int(input())
+
+movie = 666
 cnt = 0
-six_n = 666
+
 while True:
-    if '666' in str(six_n):
+    if '666' in str(movie):
         cnt += 1
-    if cnt == n:
-        print(six_n)
-        break
-    six_n += 1
+        if cnt == n:
+            break
+    movie += 1
+
+print(movie)
