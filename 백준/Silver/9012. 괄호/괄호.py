@@ -1,20 +1,18 @@
-t = int(input())
+n = int(input())
 
-for _ in range(t):
+for i in range(n):
+    gwal = input()
     stack = []
-    paren = input()
-
-    for i in paren:
+    for i in gwal:
         if i == '(':
-            stack.append(i)
-        else:
-            if stack:
-                stack.pop()
-            else:
-                print('NO')
+            stack.append('(')
+        elif i == ')':
+            if len(stack) == 0:
+                stack.append(')')
                 break
+            else:
+                stack.pop()
+    if len(stack) != 0:
+        print('NO')
     else:
-        if not stack:  
-            print('YES')
-        else :
-            print('NO')
+        print('YES')
