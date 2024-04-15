@@ -1,14 +1,14 @@
-n, m = map(int,input().split())
-ans = []
+n, m = map(int, input().split())
+arr = []
 
-def back(s):
-    if len(ans) == m:
-        print(' '.join(map(str, ans)))
+def dfs(s):
+    if len(arr) == m:
+        print(' '.join(map(str, arr)))
         return
     for i in range(s, n + 1):
-        if i not in ans:
-            ans.append(i)
-            back(i)
-            ans.pop()
+        if i not in arr:
+            arr.append(i)
+            dfs(i + 1)
+            arr.pop()
 
-back(1)
+dfs(1)
