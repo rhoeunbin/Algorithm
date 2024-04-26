@@ -1,5 +1,6 @@
-t = int(input()) #test case
+import sys
+input = sys.stdin.readline
 
-for _ in range(t):
+for _ in range(int(input())):
     a, b = map(int,input().split())
-    print(a+b)
+    print(a + b)
