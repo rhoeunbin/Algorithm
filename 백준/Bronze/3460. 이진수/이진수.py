@@ -1,6 +1,8 @@
 for _ in range(int(input())):
     n = int(input())
-    b = bin(n)[2:]
-    for i in range(len(b)):
-        if b[-i - 1] == '1':
-            print(i, end = ' ')
+    ans = 0
+    while n > 0:
+        if n % 2 == 1:
+            print(ans, end=" ")
+        n = n // 2
+        ans += 1
