@@ -1,8 +1,5 @@
-word = ""
-
-for i in input():
-    if i.islower():
-        word += i.upper()
+for w in input():
+    if w.isupper():
+        print(w.lower(), end='')
     else:
-        word += i.lower()
-print(word)
+        print(w.upper(), end='')
