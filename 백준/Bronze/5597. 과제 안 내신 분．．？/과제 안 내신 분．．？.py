@@ -1,8 +1,7 @@
-students = [i for i in range(1,31)]
-
+stu = []
 for _ in range(28):
-    apply = int(input())
-    students.remove(apply) #소거
-
-print(min(students))
-print(max(students))
+    stu.append(int(input()))
+stu.sort()
+for i in range(1, 31):
+    if i not in stu:
+        print(i)
