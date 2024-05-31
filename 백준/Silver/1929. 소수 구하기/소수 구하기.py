@@ -1,16 +1,11 @@
-import math
-M, N = map(int,input().split())
-arr = [0]*(N+1)
+m, n = map(int, input().split())
 
-for i in range(2,N + 1):
-    arr[i] = i
-
-for i in range(2, int(math.sqrt(N) + 1)):
-    if arr[i] == 0:
+for i in range(m, n + 1):
+    if i == 1:
         continue
-    for j in range(i + i, N +1, i):
-        arr[j] = 0
-
-for i in range(M, N+1):
-    if arr[i] != 0:
-        print(arr[i])
+    
+    for j in range(2, int(i**0.5) + 1):
+        if i % j == 0:
+            break
+    else:
+        print(i)
