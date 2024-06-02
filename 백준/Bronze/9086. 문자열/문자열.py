@@ -1,8 +1,4 @@
 t = int(input())
-
-for i in range(t):
-    word = str(input())
-    if len(word) == 1:
-        print(word + word)
-    else:
-        print(word[0] + word[-1])
+for _ in range(t):
+    sen = str(input())
+    print(sen[0]+sen[-1])
