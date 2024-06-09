@@ -1,7 +1,6 @@
+alpha = 'abcdefghijklmnopqrstuvwxyz'
 s = input()
-word =  'abcdefghijklmnopqrstuvwxyz'
-
-for i in word:
+for i in alpha:
     if i in s:
         print(s.index(i), end = ' ')
     else:
