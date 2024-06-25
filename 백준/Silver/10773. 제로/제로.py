@@ -1,10 +1,9 @@
 k = int(input())
-stack = []
-
-for i in range(k):
+num = []
+for _ in range(k):
     n = int(input())
-    if n == 0:
-        stack.pop()
+    if n != 0:
+        num.append(n)
     else:
-        stack.append(n)
-print(sum(stack))
+        num.pop()
+print(sum(num))
