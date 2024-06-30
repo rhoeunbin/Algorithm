@@ -1,18 +1,20 @@
-import sys
-
 k, n = map(int, input().split())
-lans = [int(sys.stdin.readline()) for _ in range(k)]
-left, right = 1, max(lans)
+lan = []
 
-while left <= right:
-    mid = (left + right) // 2
-    count = 0
+for _ in range(k):
+    lan.append(int(input()))
 
-    for lan in lans:
-        count += lan // mid
-    if count >= n:
-        left = mid + 1
+start, end = 1, max(lan) # 1부터 가장 긴 길이까지 
+
+while (start <= end): # 잘린 랜선 개수가 n보다 많으면 mid 밑으로 볼 필요 X
+    mid = (start + end) // 2
+    cnt = 0
+
+    for i in range(k):
+        cnt += lan[i] // mid
+    if cnt >= n:
+        start = mid + 1
     else:
-        right = mid - 1
+        end = mid - 1
 
-print(right)
+print(end)
