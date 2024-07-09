@@ -1,3 +1,3 @@
-n = int(input())
-car = list(map(int, input().split()))
-print(car.count(n))
+f = int(input())
+car_num = list(map(int, input().split()))
+print(car_num.count(f))
