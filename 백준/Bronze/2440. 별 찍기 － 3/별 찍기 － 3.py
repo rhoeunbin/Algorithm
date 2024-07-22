@@ -1,3 +1,3 @@
 n = int(input())
-for star in range(n):
-    print('*'*(n-star))
+for i in range(1, n + 1):
+    print("*"*(n - i + 1))
