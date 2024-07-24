@@ -1,24 +1,23 @@
-from collections import deque
-import sys
-input = sys.stdin.readline
-
 t = int(input())
 
-for i in range(t):
-    n, m = map(int,input().split())
-    q = deque(list(map(int,input().split())))
-    idx = deque(list(range(n)))
-    ans = 0
+for _ in range(t):
+    n, m = map(int, input().split())
+    prior = list(map(int, input().split()))
 
-    while q:
-        if q[0] == max(q):
-            ans += 1
-            q.popleft()
-            d_idx = idx.popleft()
+    res = 1
 
-            if d_idx == m:
-                print(ans)
-
+    while prior:
+        if prior[0] < max(prior):
+            prior.append(prior.pop(0))
         else:
-            q.append(q.popleft())
-            idx.append(idx.popleft())
+            if m == 0:
+                break
+            prior.pop(0)
+            res += 1
+
+        if m > 0:
+            m -= 1
+        else:
+            m = len(prior) - 1
+
+    print(res)            
