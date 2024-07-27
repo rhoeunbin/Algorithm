@@ -1,6 +1,6 @@
-n, m = map(int,input().split())
+n, m = map(int, input().split())
 
-if n * 100 >= m:
+if m <= 100*n:
     print('Yes')
 else:
     print('No')
