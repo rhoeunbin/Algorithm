@@ -1,7 +1,10 @@
-sum = 0
+score = 0
 for i in range(5):
-    score = int(input())
-    if score<40:
-        score = 40
-    sum += score
-print(int(sum/5))
+    stu = int(input())
+    if stu < 40:
+        stu = 40
+    
+    score += stu
+
+print(score//5)
+    
