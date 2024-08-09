@@ -1,5 +1,5 @@
 l, p = map(int, input().split())
-people = list(map(int, input().split()))
-party = l * p
-for i in people:
-    print(i - party, end=' ')
+num = list(map(int, input().split()))
+
+for i in num:
+    print(i - l*p, end = ' ')
