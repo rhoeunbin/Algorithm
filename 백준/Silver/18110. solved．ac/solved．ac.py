@@ -1,18 +1,16 @@
-import sys
-input = sys.stdin.readline
-
-def my_round(num):
-    if num - int(num) >= 0.5:
-        return int(num) + 1
+def round(n):
+    if n - int(n) >= 0.5:
+        return int(n) + 1
     else:
-        return int(num)
-    # return int(num) + 1 if num - int(num) >= 0.5 else int(num)
+        return int(n)
+    
 
 n = int(input())
-if n:
-    arr = [int(input()) for _ in range(n)]
-    arr.sort()
-    exc = my_round(n * 0.15)
-    print(my_round(sum(arr[exc:-exc] if exc else arr) / (n - 2 * exc)))
-else:
+
+if n: # 의견이 있다면
+    o = sorted([int(input()) for _ in range(n)])
+    exc = round(n * 0.15)
+    score = o[exc:n - exc]
+    print(round(sum(score) / len(score)))  
+else: # 의견이 없으면
     print(0)
