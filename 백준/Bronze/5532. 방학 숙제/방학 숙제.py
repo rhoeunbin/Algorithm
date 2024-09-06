@@ -5,13 +5,13 @@ c = int(input())
 d = int(input())
 
 if a % c == 0 :
-  ac = a // c
+    cnt1 = a // c
 else :
-  ac = (a // c) + 1
+    cnt1 = (a // c) + 1
 
 if b % d == 0 :
-  bd = b // d
+    cnt2 = b // d
 else :
-  bd = (b // d) + 1
+    cnt2 = (b // d) + 1
 
-print(l - max(ac, bd))
+print(l - max(cnt1, cnt2))
