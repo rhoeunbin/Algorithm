@@ -1,9 +1,5 @@
-mo = ['a', 'e', 'i', 'o', 'u']
-
-word = input()
-cnt = 0
-
-for i in range(len(word)):
-    if word[i] in mo:
-        cnt += 1
-print(cnt)
+ans = 0
+for alpha in input():
+    if alpha in ['a', 'e', 'i', 'o', 'u']:
+        ans += 1
+print(ans)
