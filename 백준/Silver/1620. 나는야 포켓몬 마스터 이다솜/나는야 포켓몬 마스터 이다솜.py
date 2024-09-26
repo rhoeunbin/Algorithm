@@ -1,18 +1,15 @@
-import sys
-input = sys.stdin.readline
-
 n, m = map(int, input().split())
 
 poketmon = {}
-for i in range(1, n + 1):
+for num in range(1, n + 1):
     name = input().strip()
-    poketmon[i] = name
-    poketmon[name] = i
+    poketmon[num] = name
+    poketmon[name] = num
 
-for _ in range(m):
-    com = input().strip()
 
-    if com.isdigit():  # int 이면
-        print(poketmon[int(com)])
+for i in range(m):
+    f = input().strip()
+    if f.isdigit():
+        print(poketmon[int(f)])
     else:
-        print(poketmon[com])
+        print(poketmon[f])
