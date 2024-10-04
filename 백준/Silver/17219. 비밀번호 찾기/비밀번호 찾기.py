@@ -1,9 +1,9 @@
-n, m = map(int, input().split())
-ans = {}
+n, m = map(int,input().split())
+pw = {}
 
-for i in range(n):
-    site, pw = input().split()
-    ans[site] = pw
+for _ in range(n):
+    site, name = input().split()
+    pw[site] = name
 
-for i in range(m):
-    print(ans[input().strip()])
+for _ in range(m):
+    print(pw[input().strip()])
