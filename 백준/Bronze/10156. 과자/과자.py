@@ -1,7 +1,7 @@
-K, N, M = map(int, input().split())
-answer = (K*N)-M 
+k, n, m = map(int, input().split())
+ans = (k*n) - m 
 
-if answer > 0:
-    print(answer)
+if ans > 0:
+    print(ans)
 else:
     print(0)
