@@ -1,9 +1,7 @@
-c = input()
-if c == "SONGDO":
-    print("HIGHSCHOOL")
-elif c == "CODE":
-    print("MASTER")
-elif c == "2023":
-    print("0611")
-elif c == "ALGORITHM":
-    print("CONTEST")
+guho = {
+    "SONGDO" : "HIGHSCHOOL", 
+    "CODE" : "MASTER",
+    "2023" : "0611",
+    "ALGORITHM" : "CONTEST"
+}
+print(guho[input()])
