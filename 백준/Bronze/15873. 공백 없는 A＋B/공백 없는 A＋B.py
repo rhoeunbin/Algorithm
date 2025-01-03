@@ -1,6 +1,6 @@
-a = input()
+n = input()
 
-if a[1] == "0":
-    print(10 + int(a[2:]))
+if n[1] == '0':
+    print(10 + int(n[2:]))
 else:
-    print(int(a[0]) + int(a[1:]))
+    print(int(n[0]) + int(n[1:]))
