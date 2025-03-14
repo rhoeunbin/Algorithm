@@ -1,12 +1,14 @@
-n, m = map(int, input().split())
-ans = []
+n, m = map(int,input().split())
+arr = []
 
-def back(s):
-    if len(ans) == m:
-        print(' '.join(map(str, ans)))
+def dfs(s):
+    if len(arr) == m:
+        print(' '.join(map(str, arr)))
         return
+    
     for i in range(s, n + 1):
-        ans.append(i) # 배열 추가
-        back(i) # 재귀
-        ans.pop()
-back(1)
+        arr.append(i)
+        dfs(i)
+        arr.pop()
+
+dfs(1)
