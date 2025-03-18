@@ -1,4 +1,6 @@
-a = int(input()) #개수
-nums = list(map(int,input().split()))
-nums.sort()
-print(nums[0] * nums[-1]) 
+n = int(input())
+num = list(map(int, input().split()))
+
+num.sort()
+
+print(num[0] * num[-1])
