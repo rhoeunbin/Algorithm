@@ -1,8 +1,10 @@
-N = int(input())
-cnt = 0
-L = len(str(N))
+n = input()
+length = len(n) - 1
+ans = 0
 
-for i in range(L-1):
-    cnt += 9 * 10 ** i * (i+1)
+for i in range(length):
+    ans += 9 * (10**i) * (i+1)
+    
+ans += ((int(n) - (10 ** length))+1) * (length+1)
 
-print(cnt + (N - 10**(L - 1) + 1) * L)
+print(ans)
